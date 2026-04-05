@@ -1,0 +1,177 @@
+/* --- Global & Container Styling --- */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* Deep Radial Gradient for Premium Look */
+    background: radial-gradient(circle at center, #1e272e 0%, #000000 100%);
+    color: #ffffff;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.game h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    /* Neon Gradient Text */
+    background: linear-gradient(to right, #aec52e, #f3ffad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-align: center;
+    filter: drop-shadow(0 0 8px rgba(174, 197, 46, 0.4));
+}
+
+/* --- Glassmorphism Board --- */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03); /* Transparent White */
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px); /* Blur Effect */
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- Modern Interactive Cells --- */
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+/* Hover & Active Effects */
+.cell:hover {
+    background: rgba(174, 197, 46, 0.15);
+    transform: translateY(-5px) scale(1.05);
+    border-color: #aec52e;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(174, 197, 46, 0.2);
+}
+
+.cell:active {
+    transform: scale(0.95);
+}
+
+/* --- X and O Specific Colors (Neon Glow) --- */
+/* Tip: In React use className={`cell ${cell}`} */
+.cell.X {
+    color: #ff4d4d; 
+    text-shadow: 0 0 20px rgba(255, 77, 77, 0.6);
+}
+
+.cell.O {
+    color: #4da6ff; 
+    text-shadow: 0 0 20px rgba(77, 166, 255, 0.6);
+}
+
+/* --- Info & Status Section --- */
+.info {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.info p {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+    color: #eee;
+    letter-spacing: 1px;
+}
+
+/* Winner Name Highlight */
+.info p span {
+    font-weight: 800;
+    color: #aec52e;
+    text-shadow: 0 0 10px rgba(174, 197, 46, 0.5);
+}
+
+/* --- Premium Restart Button --- */
+.btn-success, .btn-restart {
+    background: linear-gradient(135deg, #aec52e 0%, #7a8a1a 100%);
+    color: #000;
+    border: none;
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 25px rgba(174, 197, 46, 0.3);
+    outline: none;
+}
+
+.btn-restart:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(174, 197, 46, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-restart:active {
+    transform: translateY(1px);
+}
+
+/* --- Responsive Design (Mobile Friendly) --- */
+
+@media (max-width: 480px) {
+    .game h1 {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 85px);
+        grid-template-rows: repeat(3, 85px);
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .cell {
+        width: 85px;
+        height: 85px;
+        font-size: 2.2rem;
+        border-radius: 12px;
+    }
+
+    .info p {
+        font-size: 1.4rem;
+    }
+
+    .btn-restart {
+        padding: 12px 35px;
+        font-size: 1rem;
+        width: 80%;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 350px) {
+    .board {
+        grid-template-columns: repeat(3, 75px);
+        grid-template-rows: repeat(3, 75px);
+    }
+    .cell {
+        width: 75px;
+        height: 75px;
+    }
+}
