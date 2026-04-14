@@ -2,7 +2,7 @@
 
 A simple yet highly interactive Tic-Tac-Toe game. This project focuses on clean code and efficient game logic handling using Vanilla JavaScript.
 
-🌐 **Live Demo:** [https://tictactoerk.netlify.app](https://tictactoerk.netlify.app) (Apna sahi link yahan daalein)
+🌐 **Live Demo:** https://its-tictacgame.netlify.app
 
 ---
 
